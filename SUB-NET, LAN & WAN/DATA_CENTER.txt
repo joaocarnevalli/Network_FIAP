@@ -1,0 +1,62 @@
+Router Data Center (Explicacao)
+
+(Lan)
+ena 
+conf t
+hostname Data_Center
+enable password cisco
+int g0/0
+ip address 172.21.24.1 255.255.248.0
+no shut
+
+(Wan)
+int s0/3/0
+ip address 172.21.32.17 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.14 255.255.255.252
+no shut
+int s0/2/1
+ip address 172..21.32.10 255.255.255.252
+no shut
+
+router rip
+version 2
+network 172.21.24.0
+network 172.21.32.16
+network 172.21.32.8
+network 172.21.32.12
+
+line vty 0 4
+password cisco
+login
+
+scrip Data Center
+
+ena 
+conf t
+hostname Data_Center
+enable password cisco
+int g0/0
+ip address 172.21.24.1 255.255.248.0
+no shut
+int s0/3/0
+ip address 172.21.32.17 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.14 255.255.255.252
+no shut
+int s0/2/1
+ip address 172.21.32.10 255.255.255.252
+no shut
+router rip
+version 2
+network 172.21.24.0
+network 172.21.32.16
+network 172.21.32.8
+network 172.21.32.12
+line vty 0 4
+password cisco
+login

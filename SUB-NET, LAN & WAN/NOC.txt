@@ -1,0 +1,55 @@
+Router NOC (Explicacao)
+
+
+(LAN)
+ena
+conf t
+hostname NOC
+enable password cisco
+int g0/0
+ip address 172.21.16.1 255.255.248.0
+no shut
+
+(Wan)
+int s0/3/0
+ip address 172.21.32.13 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.2 255.255.255.252
+no shut
+
+router rip
+version 2
+network 172.21.16.0
+network 172.21.32.0
+network 172.21.32.12
+
+line vty 0 4
+password cisco
+login
+
+Scrip Router NOC
+
+ena
+conf t
+hostname NOC
+enable password cisco
+int g0/0
+ip address 172.21.16.1 255.255.248.0
+no shut
+int s0/3/0
+ip address 172.21.32.13 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.2 255.255.255.252
+no shut
+router rip
+version 2
+network 172.21.16.0
+network 172.21.32.0
+network 172.21.32.12
+line vty 0 4
+password cisco
+login

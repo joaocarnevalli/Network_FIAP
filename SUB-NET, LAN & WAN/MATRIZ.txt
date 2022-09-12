@@ -1,0 +1,66 @@
+Matriz ROUTER (Explicacao)
+
+(LAN)
+ena
+conf t
+Hostname Matriz
+enable password cisco
+int g0/0
+ip address 172.21.0.1 255.255.248.0
+no shut
+
+(WAN)
+int s0/3/0
+ip address 172.21.32.1 255.255.255.252
+clock rate 64000
+no shut
+int s0/2/0
+ip address 172.21.32.9 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32. 255.255.255.252
+no shut
+
+router rip
+version 2
+network 172.21.0.0
+network 172.21.32.0
+network 172.21.32.4
+network 172.21.32.8
+
+conf t
+line vty 0 4
+password cisco
+login
+
+(SCRIP - ROUTER MATRIZ)
+
+ena
+conf t
+Hostname Matriz
+enable password cisco
+int g0/0
+ip address 172.21.0.1 255.255.248.0
+no shut
+int s0/3/0
+ip address 172.21.32.1 255.255.255.252
+clock rate 64000
+no shut
+int s0/2/0
+ip address 172.21.32.9 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.6 255.255.255.252
+no shut
+router rip
+version 2
+network 172.21.0.0
+network 172.21.32.0
+network 172.21.32.4
+network 172.21.32.8
+line vty 0 4
+password cisco
+login
+

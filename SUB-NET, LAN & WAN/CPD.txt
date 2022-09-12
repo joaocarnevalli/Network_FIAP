@@ -1,0 +1,56 @@
+CPD ROUTER (Explicacao)
+
+(Lan)
+ena
+conf t
+hostname CPD
+enable password cisco
+int g0/0
+ip address 172.21.8.1 255.255.248.0
+no shut
+
+(Wan)
+int s0/3/0
+ip address 172.21.32. 5 255.255.255.252
+clock rate 64000
+no shut
+int 0/3/1
+ip address 172.21.32.18 255.255.255.252
+no shut
+
+router rip
+version 2
+network 172.21.8.0
+network 172.21.32.4
+network 172.21.32.16
+
+line vty 0 4
+password cisco
+login
+
+SCRIPT ROUTER CPD
+
+ena
+conf t
+hostname CPD
+enable password cisco
+int g0/0
+ip address 172.21.8.1 255.255.248.0
+no shut
+int s0/3/0
+ip address 172.21.32.5 255.255.255.252
+clock rate 64000
+no shut
+int s0/3/1
+ip address 172.21.32.18 255.255.255.252
+no shut
+router rip
+version 2
+network 172.21.8.0
+network 172.21.32.4
+network 172.21.32.16
+line vty 0 4
+password cisco
+login
+
+
