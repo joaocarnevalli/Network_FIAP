@@ -14,6 +14,21 @@ Cyber ​​defense course in college at [FIAP](https://www.fiap.com.br) and net
 ## Subjects
 * IPV4
 * IPV6
+* VLAN's
+* Sub-Net's
+* STP
+* Link Agregation
+* RIP v2
+* Static Routing
+* DHCP
+* SSH
+* Distance Vector & Link State
+* BGP
+* EIGRP
+* OSPF
+* NAT
+* SNMP
+* HSRP
 - - - - - - - - - - - - - - - - - - -
 ## Technologies
 [Cisco Packet Tracer](https://www.netacad.com/pt-br/courses/packet-tracer)
